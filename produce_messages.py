@@ -1,3 +1,4 @@
+import os
 import json
 import time
 
@@ -6,7 +7,7 @@ import random
 
 keys = ['A', 'B', 'C', 'D']
 
-producer = KafkaProducer(bootstrap_servers='localhost:9092', security_protocol="PLAINTEXT")
+producer = KafkaProducer(bootstrap_servers=os.environ['BROKER'], security_protocol="PLAINTEXT")
 
 while True:
     key = keys[random.randint(0, len(keys)-1)]
