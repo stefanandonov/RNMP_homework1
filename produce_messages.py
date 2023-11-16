@@ -2,6 +2,7 @@ import json
 import time
 
 from kafka import KafkaProducer
+
 import random
 
 keys = ['A', 'B', 'C', 'D']

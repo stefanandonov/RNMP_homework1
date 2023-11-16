@@ -1,4 +1,5 @@
 #!/bin/sh
+python -m venv ./venv
+pip install -r requirements.txt
 docker-compose up -d
-pip install requirements.txt
 python produce_messages.py
