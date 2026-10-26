@@ -1,9 +1,12 @@
+import sys
+
 from kafka import KafkaConsumer
 
 # Kafka configuration
 bootstrap_servers = 'localhost:9092'
-topic = 'sensors'
-# TODO change the name of the topic here (result1 or result2) to verify that Flink produces the wanted results
+# Topic can be passed as an argument, e.g. `python consume_messages.py result1`
+# (use result1 or result2 to verify that Flink produces the wanted results)
+topic = sys.argv[1] if len(sys.argv) > 1 else 'sensors'
 
 # Create a Kafka consumer
 consumer = KafkaConsumer(topic,
